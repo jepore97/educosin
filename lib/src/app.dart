@@ -11,45 +11,24 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => Stack(
         children: [
           MaterialApp(
+<<<<<<< HEAD
             home: SelectGrade(),
             title: 'Colombia Enduro',
 
+=======
+            home: SplashScreen(),
+            title: 'Educosin',
+>>>>>>> 73bb97a656c6c1924c49b64e6566a21431f5ed20
             theme: ThemeData(
-              brightness: Brightness.light,
-              scaffoldBackgroundColor: Color.fromRGBO(0, 143, 214, 1),
+              scaffoldBackgroundColor: Color(0x00000000),
               primaryColor: Color.fromRGBO(0, 90, 179, 1),
-              primaryColorLight: Colors.blueGrey[500],
-              dialogBackgroundColor: Colors.blueGrey[200],
-              secondaryHeaderColor: Colors.orange[100],
-              accentColor: Colors.orange[400],
-              backgroundColor: Colors.white,
+              primaryColorLight: Color.fromRGBO(0, 143, 214, 1),
+              accentColor: Color.fromRGBO(255, 204, 0, 1),
               highlightColor: Color.fromRGBO(230, 230, 230, 1),
 
               // Define la Familia de fuente por defecto
-              fontFamily: 'Montserrat',
-
-              // Define el TextTheme por defecto. Usa esto para espicificar el estilo de texto por defecto
-              // para cabeceras, títulos, cuerpos de texto, y más.
-            ),
-            darkTheme: ThemeData(
-              //Se indica que el tema tiene un brillo oscuro
-              brightness: Brightness.dark,
-              scaffoldBackgroundColor: Colors.grey[900],
-              primaryColor: Colors.grey[900],
-              primaryColorLight: Colors.grey[700],
-              dialogBackgroundColor: Colors.grey[600],
-              cardColor: Colors.black12,
-              splashColor: Colors.blueGrey[200],
-              textTheme: TextTheme(
-                  title: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20)),
-              textSelectionColor: Colors.white,
-              secondaryHeaderColor: Colors.orange[100],
-              accentColor: Colors.orange[400],
-            ),
-            // initialRoute: '/',
+              fontFamily: 'Lato',
+            ), // initialRoute: '/',
             debugShowCheckedModeBanner: false,
           )
         ],
