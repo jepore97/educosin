@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               brightness: Brightness.light,
               scaffoldBackgroundColor: Color.fromRGBO(0, 143, 214, 1),
-              primaryColor: Colors.blueGrey[800],
+              primaryColor: Color.fromRGBO(0, 90, 179, 1),
               primaryColorLight: Colors.blueGrey[500],
               dialogBackgroundColor: Colors.blueGrey[200],
               secondaryHeaderColor: Colors.orange[100],
               accentColor: Colors.orange[400],
               backgroundColor: Colors.white,
-              highlightColor: Colors.grey[300],
+              highlightColor: Color.fromRGBO(230, 230, 230, 1),
 
               // Define la Familia de fuente por defecto
               fontFamily: 'Montserrat',

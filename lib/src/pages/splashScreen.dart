@@ -11,9 +11,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('hola'),
-      ),
       body: Center(
         child: Text('hola mundo'),
       ),
