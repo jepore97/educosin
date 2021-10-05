@@ -1,3 +1,4 @@
+import 'package:educosin/src/pages/selectGrade.dart';
 import 'package:educosin/src/pages/splashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => Stack(
         children: [
           MaterialApp(
-            home: SplashScreen(),
+            home: SelectGrade(),
             title: 'Colombia Enduro',
 
             theme: ThemeData(
