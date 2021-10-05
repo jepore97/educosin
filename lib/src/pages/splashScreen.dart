@@ -47,9 +47,8 @@ class _SplashScreenState extends State<SplashScreen> {
                   children: [
                     Spacer(),
                     Image(
-                      height: 250,
-                      width: 250,
-                      image: AssetImage('assets/images/logo.png'),
+                      width: 1000,
+                      image: AssetImage('assets/images/logo_splash_screen.png'),
                     ),
                     Spacer(),
                     SizedBox(

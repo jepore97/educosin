@@ -12,7 +12,6 @@ class MyApp extends StatelessWidget {
           MaterialApp(
             home: SplashScreen(),
             title: 'Educosin',
-
             theme: ThemeData(
               scaffoldBackgroundColor: Color(0x00000000),
               primaryColor: Color.fromRGBO(0, 90, 179, 1),

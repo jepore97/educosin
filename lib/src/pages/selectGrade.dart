@@ -11,6 +11,11 @@ class _SelectGradeState extends State<SelectGrade> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomSheet: Container(
+        height: 100,
+        width: MediaQuery.of(context).size.width,
+        child: Text('hola'),
+      ),
       body: Container(
           padding: EdgeInsets.all(20),
           height: MediaQuery.of(context).size.height,
