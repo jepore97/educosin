@@ -50,6 +50,8 @@ flutter:
   assets:
     - assets/images/logo.png
     - assets/images/LIBROS.png
+    - assets/images/GRADUANDO.png
+    - assets/images/TORRE.png
     - assets/images/logocompletoazul.png
     - assets/images/mineducacion.png
     - assets/images/colciencias.png

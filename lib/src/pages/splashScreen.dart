@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:educosin/src/pages/selectGrade.dart';
+import 'package:educosin/src/pages/Home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,20 +23,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setEnabledSystemUIOverlays([]);
-    return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Theme.of(context).primaryColorLight,
-            Theme.of(context).primaryColor,
-          ],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Theme.of(context).primaryColorLight,
+              Theme.of(context).primaryColor,
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
-      ),
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Center(
+        child: Center(
           child: Container(
             child: SafeArea(
               child: Padding(
@@ -78,6 +77,6 @@ class _SplashScreenState extends State<SplashScreen> {
 
   navigationPage() {
     Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => SelectGrade()));
+        MaterialPageRoute(builder: (BuildContext context) => HomePage()));
   }
 }

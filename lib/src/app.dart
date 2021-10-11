@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
             home: SplashScreen(),
             title: 'Educosin',
             theme: ThemeData(
-              scaffoldBackgroundColor: Color.fromRGBO(0, 143, 214, 1),
               primaryColor: Color.fromRGBO(0, 90, 179, 1),
               primaryColorLight: Color.fromRGBO(0, 143, 214, 1),
               accentColor: Color.fromRGBO(255, 204, 0, 1),
