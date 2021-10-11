@@ -21,6 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  video_player: 
+  flick_video_player:
+  chewie:
   flutter:
     sdk: flutter
 
@@ -55,6 +58,9 @@ flutter:
     - assets/images/logocompletoazul.png
     - assets/images/mineducacion.png
     - assets/images/colciencias.png
+    - assets/images/HOME.png
+    - assets/images/BACK.png
+    - assets/images/video.mp4
     - assets/images/logo_splash_screen.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
