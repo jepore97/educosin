@@ -2,6 +2,7 @@
     package="com.example.educosin">
    <application
         android:label="educosin"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -37,5 +38,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+
     </application>
+    
+      <uses-permission android:name="android.permission.INTERNET"/>
+
 </manifest>
