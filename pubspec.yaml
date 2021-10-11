@@ -21,9 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  video_player: 
-  flick_video_player:
-  chewie:
+  video_player: ^2.2.5
+  chewie: ^1.2.2
   flutter:
     sdk: flutter
 

@@ -18,6 +18,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
     "PERIODO 3",
     "PERIODO 4",
   ];
+  String option = "Home";
   bool cont = true;
   VideoPlayerController videoPlayerController;
   ChewieController chewieController;
@@ -100,11 +101,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                   buttonsFile(),
                                 ],
                               ),
-                              cont
-                                  ? selects()
-                                  : Container(
-                                      child: contenido(Text('')),
-                                    )
+                              contenido(option),
                             ],
                           ),
                         )
@@ -146,7 +143,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                 children: [
                                   InkWell(
                                     onTap: () {
-                                      contenido(Text('hola mundo'));
+                                      setState(() {
+                                        option = "Biblioteca";
+                                      });
                                     },
                                     child: Container(
                                       child: Image(
@@ -281,7 +280,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   buttonFile(String text) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        setState(() {
+          option = text;
+        });
+      },
       child: Container(
         margin: EdgeInsets.only(top: 20),
         padding: EdgeInsets.symmetric(horizontal: 10),
@@ -484,10 +487,14 @@ class _PrincipalPageState extends State<PrincipalPage> {
     );
   }
 
-  Widget contenido(Widget widget) {
-    return Container(
-      child: widget,
-    );
+  Widget contenido(String optionSection) {
+    switch (optionSection) {
+      case "Home":
+        return selects();
+        break;
+      default:
+        return CircularProgressIndicator();
+    }
   }
 
   void dispose() {
@@ -505,7 +512,8 @@ class _PrincipalPageState extends State<PrincipalPage> {
             content: Container(
               child: Center(
                 child: chewieController != null &&
-                        chewieController.videoPlayerController.value.initialized
+                        chewieController
+                            .videoPlayerController.value.isInitialized
                     ? Chewie(
                         controller: chewieController,
                       )
