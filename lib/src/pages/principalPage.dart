@@ -77,6 +77,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
                           margin: EdgeInsets.symmetric(
                               vertical: 10, horizontal: 10),
                           decoration: BoxDecoration(
+                            color: (option != "Home" && option != "RED")
+                                ? Theme.of(context).highlightColor
+                                : null,
                             border: Border(
                               right: BorderSide(
                                 color: Theme.of(context).highlightColor,
@@ -93,7 +96,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                       icon: Icon(
                                         Icons.menu,
                                         size: 60,
-                                        color: Theme.of(context).accentColor,
+                                        color: (option != "Home" &&
+                                                option != "RED")
+                                            ? Theme.of(context)
+                                                .primaryColorLight
+                                            : Theme.of(context).accentColor,
                                       ),
                                       onPressed: () {
                                         scaffoldKey.currentState.openDrawer();
@@ -293,14 +300,16 @@ class _PrincipalPageState extends State<PrincipalPage> {
         margin: EdgeInsets.only(top: 20),
         padding: EdgeInsets.symmetric(horizontal: 10),
         decoration: BoxDecoration(
-            color: Theme.of(context).highlightColor,
+            color: (option != "Home" && option != "RED")
+                ? Colors.white
+                : Theme.of(context).highlightColor,
             borderRadius: BorderRadius.circular(
                 10) // use instead of BorderRadius.all(Radius.circular(20))
             ),
         child: Text(text,
             style: TextStyle(
                 fontSize: 40,
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).primaryColorLight,
                 fontWeight: FontWeight.bold)),
       ),
     );

@@ -11,17 +11,17 @@ class SelectGrade extends StatefulWidget {
 
 class _SelectGradeState extends State<SelectGrade> {
   final List<String> _dropdownValues = [
-    "Grado 1",
-    "Grado 2",
-    "Grado 3",
-    "Grado 4",
-    "Grado 5",
-    "Grado 6",
-    "Grado 7",
-    "Grado 8",
-    "Grado 9",
-    "Grado 10",
-    "Grado 11",
+    "GRADO 1",
+    "GRADO 2",
+    "GRADO 3",
+    "GRADO 4",
+    "GRADO 5",
+    "GRADO 6",
+    "GRADO 7",
+    "GRADO 8",
+    "GRADO 9",
+    "GRADO 10",
+    "GRADO 11",
   ];
   final List<String> _dropdownValuesPeriodo = [
     "PERIODO 1",
@@ -80,19 +80,25 @@ class _SelectGradeState extends State<SelectGrade> {
                 Text(
                   'Selecciona el ',
                   style: TextStyle(
-                      color: Theme.of(context).highlightColor, fontSize: 50),
+                      color: Theme.of(context).highlightColor,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  'Grado, Periodo y Materia ',
+                  'GRADO, Periodo y Materia ',
                   style: TextStyle(
-                      color: Theme.of(context).accentColor, fontSize: 50),
+                      color: Theme.of(context).accentColor,
+                      fontSize: 50,
+                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             Text(
               'que desea estudiar',
               style: TextStyle(
-                  color: Theme.of(context).highlightColor, fontSize: 50),
+                  color: Theme.of(context).highlightColor,
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold),
             )
           ],
         ));
