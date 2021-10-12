@@ -205,39 +205,43 @@ class _PrincipalPageState extends State<PrincipalPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Icon(
-                Icons.help,
-                color: Theme.of(context).highlightColor,
-                size: 100,
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Nota:',
-                        style: TextStyle(
-                            color: Theme.of(context).accentColor, fontSize: 25),
-                      ),
-                      Text(
-                        'Recuerda que no necesitas conexión a internet para ver los OVA, OVA+ ni las',
-                        style: TextStyle(
-                            color: Theme.of(context).highlightColor,
-                            fontSize: 25),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'Evaluaciones, solo para la sesión de RED si se requiere Conexión a internet.',
-                    style: TextStyle(
-                        color: Theme.of(context).highlightColor, fontSize: 25),
-                  ),
-                ],
-              ),
-            ],
-          ),
+          option == 'Home'
+              ? Row(
+                  children: [
+                    Icon(
+                      Icons.help,
+                      color: Theme.of(context).highlightColor,
+                      size: 100,
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              'Nota:',
+                              style: TextStyle(
+                                  color: Theme.of(context).accentColor,
+                                  fontSize: 25),
+                            ),
+                            Text(
+                              'Recuerda que no necesitas conexión a internet para ver los OVA, OVA+ ni las',
+                              style: TextStyle(
+                                  color: Theme.of(context).highlightColor,
+                                  fontSize: 25),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          'Evaluaciones, solo para la sesión de RED si se requiere Conexión a internet.',
+                          style: TextStyle(
+                              color: Theme.of(context).highlightColor,
+                              fontSize: 25),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
+              : Container(),
           Container(
             margin: EdgeInsets.only(right: 10),
             child: Column(
@@ -492,6 +496,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
       case "Home":
         return selects();
         break;
+      case "Biblioteca":
+        return biblioteca();
+        break;
       default:
         return CircularProgressIndicator();
     }
@@ -540,6 +547,44 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   _dismissDialog() {
     Navigator.pop(context);
+  }
+
+  Widget biblioteca() {
+    return Container(
+      color: Theme.of(context).highlightColor,
+      padding: EdgeInsets.all(10),
+      height: 450,
+      width: 700,
+      child: GridView.custom(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+        ),
+        childrenDelegate: SliverChildListDelegate(_buildItems(6)),
+      ),
+    );
+  }
+
+  List _buildItems(int count) {
+    List<Widget> listItems = List();
+
+    for (int i = 1; i <= count; i++) {
+      print('assets/images/' + i.toString() + '.png');
+      listItems.add(
+        Container(
+          padding: EdgeInsets.only(top: 15),
+          child: Center(
+            child: Image(
+              width: 250,
+              height: 400,
+              image: AssetImage('assets/images/' + i.toString() + '.png'),
+            ),
+          ),
+        ),
+      );
+    }
+    return listItems;
   }
   // final
   //

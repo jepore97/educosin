@@ -61,6 +61,13 @@ flutter:
     - assets/images/BACK.png
     - assets/images/video.mp4
     - assets/images/logo_splash_screen.png
+    - assets/images/1.png
+    - assets/images/2.png
+    - assets/images/3.png
+    - assets/images/4.png
+    - assets/images/5.png
+    - assets/images/6.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
