@@ -96,7 +96,7 @@ class _HomePageState extends State<HomePage> {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).highlightColor,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(
                       50) // use instead of BorderRadius.all(Radius.circular(20))
                   ),
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
             },
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).highlightColor,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(
                       50) // use instead of BorderRadius.all(Radius.circular(20))
                   ),

@@ -20,6 +20,18 @@ class _PrincipalPageState extends State<PrincipalPage> {
     "PERIODO 3",
     "PERIODO 4",
   ];
+
+  final List<String> _titlePDF = [
+    "LIBRO MATEMATICAS",
+    "LIBRO ESPAÑOL",
+    "LIBRO INTEGRADAS",
+    "LIBRO FISICA",
+    "LIBRO QUIMICA",
+    "LIBRO RELIGION",
+    "LIBRO CONTADURIA",
+    "LIBRO BIOLOGIA",
+    "LIBRO FILOSOFIA",
+  ];
   String option = "Home";
   bool cont = true;
   VideoPlayerController videoPlayerController;
@@ -513,6 +525,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
       case "OVA+":
         return biblioteca(_buildItemsOva(3));
         break;
+      case "PDF":
+        return pdf();
+        break;
       default:
         return CircularProgressIndicator();
     }
@@ -576,6 +591,23 @@ class _PrincipalPageState extends State<PrincipalPage> {
           crossAxisSpacing: 5.0,
         ),
         childrenDelegate: SliverChildListDelegate(item),
+      ),
+    );
+  }
+
+  Widget pdf() {
+    return Container(
+      color: Theme.of(context).highlightColor,
+      padding: EdgeInsets.all(10),
+      height: 450,
+      width: 700,
+      child: GridView.custom(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 5.0,
+          crossAxisSpacing: 5.0,
+        ),
+        childrenDelegate: SliverChildListDelegate(_buildItemsPDF()),
       ),
     );
   }
@@ -688,6 +720,24 @@ class _PrincipalPageState extends State<PrincipalPage> {
     return listItems;
   }
 
+  List _buildItemsPDF() {
+    List<Widget> listItems = List();
+    for (int i = 1; i <= 10; i++) {
+      listItems.add(
+        Container(
+          padding: EdgeInsets.only(top: 15),
+          child: Center(
+            child: Image(
+              width: 250,
+              height: 400,
+              image: AssetImage('assets/images/pdf-2.png'),
+            ),
+          ),
+        ),
+      );
+    }
+    return listItems;
+  }
   // Widget ova() {
   //   return Card(
   //     // Con esta propiedad modificamos la forma de nuestro card
