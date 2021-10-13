@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:educosin/src/utils/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -506,7 +508,10 @@ class _PrincipalPageState extends State<PrincipalPage> {
         return selects();
         break;
       case "Biblioteca":
-        return biblioteca();
+        return biblioteca(_buildItems(6));
+        break;
+      case "OVA+":
+        return biblioteca(_buildItemsOva(3));
         break;
       default:
         return CircularProgressIndicator();
@@ -558,11 +563,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
     Navigator.pop(context);
   }
 
-  Widget biblioteca() {
+  Widget biblioteca(List item) {
     return Container(
       color: Theme.of(context).highlightColor,
       padding: EdgeInsets.all(10),
-      height: 450,
+      height: 600,
       width: 700,
       child: GridView.custom(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -570,7 +575,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
           mainAxisSpacing: 5.0,
           crossAxisSpacing: 5.0,
         ),
-        childrenDelegate: SliverChildListDelegate(_buildItems(6)),
+        childrenDelegate: SliverChildListDelegate(item),
       ),
     );
   }
@@ -595,6 +600,174 @@ class _PrincipalPageState extends State<PrincipalPage> {
     }
     return listItems;
   }
+
+  List _buildItemsOva(int count) {
+    List<Widget> listItems = List();
+
+    for (int i = 1; i <= count; i++) {
+      print('assets/images/' + i.toString() + '.png');
+      listItems.add(
+        Container(
+          // Con esta propiedad agregamos margen a nuestro Card
+          // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
+          margin: EdgeInsets.all(15),
+
+          child: Column(
+            children: [
+              Container(
+                width: 200,
+                height: 200,
+                color:
+                    Colors.primaries[Random().nextInt(Colors.primaries.length)],
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Matematicas',
+                        style: TextStyle(
+                            color: Theme.of(context).highlightColor,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        'Matematicas',
+                        style: TextStyle(
+                            color: Theme.of(context).highlightColor,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '1p1',
+                        style: TextStyle(
+                            color: Theme.of(context).highlightColor,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(20),
+                color: Colors.white,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Agilmate 1p1: ',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Profesor: ',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text('Lic.Freddy')
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Duracion: ',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text('30 Minutos')
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      );
+    }
+    return listItems;
+  }
+
+  // Widget ova() {
+  //   return Card(
+  //     // Con esta propiedad modificamos la forma de nuestro card
+  //     // Aqui utilizo RoundedRectangleBorder para proporcionarle esquinas circulares al Card
+  //     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+
+  //     // Con esta propiedad agregamos margen a nuestro Card
+  //     // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
+  //     margin: EdgeInsets.all(15),
+
+  //     // Con esta propiedad agregamos elevación a nuestro card
+  //     // La sombra que tiene el Card aumentará
+  //     elevation: 10,
+  //     child: Column(
+  //       children: [
+  //         Container(
+  //           width: 200,
+  //           height: 200,
+  //           color: Colors.red,
+  //           child: Center(
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 Text(
+  //                   'Matematicas',
+  //                   style: TextStyle(
+  //                       color: Theme.of(context).highlightColor,
+  //                       fontSize: 20,
+  //                       fontWeight: FontWeight.bold),
+  //                 ),
+  //                 Text(
+  //                   'Matematicas',
+  //                   style: TextStyle(
+  //                       color: Theme.of(context).highlightColor,
+  //                       fontSize: 30,
+  //                       fontWeight: FontWeight.bold),
+  //                 ),
+  //                 Text(
+  //                   '1p1',
+  //                   style: TextStyle(
+  //                       color: Theme.of(context).highlightColor,
+  //                       fontSize: 30,
+  //                       fontWeight: FontWeight.bold),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         ),
+  //         Column(
+  //           children: [
+  //             Text(
+  //               'AgilMate1P1',
+  //               style: TextStyle(fontWeight: FontWeight.bold),
+  //             ),
+  //             Row(
+  //               children: [
+  //                 Text(
+  //                   'Profesor: ',
+  //                   style: TextStyle(fontWeight: FontWeight.bold),
+  //                 ),
+  //                 Text('Luis Fredy Sanchez')
+  //               ],
+  //             ),
+  //             Row(
+  //               mainAxisAlignment: MainAxisAlignment.start,
+  //               children: [
+  //                 Text(
+  //                   'Duracion: ',
+  //                   style: TextStyle(fontWeight: FontWeight.bold),
+  //                 ),
+  //                 Text('30 Minutos')
+  //               ],
+  //             )
+  //           ],
+  //         )
+  //       ],
+  //     ),
+  //   );
+  // }
+
   // final
   //
 
