@@ -21,6 +21,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
     "PERIODO 4",
   ];
 
+  final List<String> _PDF = [
+    "Funciones Actividades",
+    "Ejemplos",
+  ];
+
   final List<String> _titlePDF = [
     "LIBRO MATEMATICAS",
     "LIBRO ESPAÑOL",
@@ -599,7 +604,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
     return Container(
       color: Theme.of(context).highlightColor,
       padding: EdgeInsets.all(10),
-      height: 450,
+      height: 800,
       width: 700,
       child: GridView.custom(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -722,15 +727,25 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   List _buildItemsPDF() {
     List<Widget> listItems = List();
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= _PDF.length; i++) {
       listItems.add(
         Container(
           padding: EdgeInsets.only(top: 15),
           child: Center(
-            child: Image(
-              width: 250,
-              height: 400,
-              image: AssetImage('assets/images/pdf-2.png'),
+            child: Column(
+              children: [
+                Image(
+                  width: 160,
+                  image: AssetImage('assets/images/pdf-2.png'),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15),
+                  child: Text(
+                    _PDF[i - 1],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                )
+              ],
             ),
           ),
         ),
