@@ -2,6 +2,8 @@ import 'package:educosin/src/pages/principalPage.dart';
 import 'package:educosin/src/utils/widgets.dart';
 import 'package:flutter/material.dart';
 
+import 'loading.dart';
+
 class SelectGrade extends StatefulWidget {
   SelectGrade({Key key}) : super(key: key);
 
@@ -202,7 +204,7 @@ class _SelectGradeState extends State<SelectGrade> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (BuildContext context) => PrincipalPage()));
+                builder: (BuildContext context) => PageLoading()));
       },
       child: Container(
         margin: EdgeInsets.only(top: 60),
