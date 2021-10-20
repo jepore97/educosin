@@ -21,7 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter_spinkit: ^5.1.0
+  flutter_spinkit:
+  advance_pdf_viewer:
   video_player: 
   chewie: 
   flutter:

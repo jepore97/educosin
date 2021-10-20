@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:educosin/src/utils/widgets.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
+import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 
 class PrincipalPage extends StatefulWidget {
   PrincipalPage({Key key}) : super(key: key);
@@ -26,26 +28,25 @@ class _PrincipalPageState extends State<PrincipalPage> {
     "Ejemplos",
   ];
 
-  final List<String> _titlePDF = [
-    "LIBRO MATEMATICAS",
-    "LIBRO ESPAÑOL",
-    "LIBRO INTEGRADAS",
-    "LIBRO FISICA",
-    "LIBRO QUIMICA",
-    "LIBRO RELIGION",
-    "LIBRO CONTADURIA",
-    "LIBRO BIOLOGIA",
-    "LIBRO FILOSOFIA",
-  ];
   String option = "Home";
   bool cont = true;
   VideoPlayerController videoPlayerController;
   ChewieController chewieController;
   var scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _isLoading = true;
+  PDFDocument document;
   @override
   void initState() {
     super.initState();
     initializeVideoPlayer();
+    loadDocument();
+  }
+
+  loadDocument() async {
+    document = await PDFDocument.fromAsset(
+        'assets/images/Secundaria Activa Matemáticas 9°.pdf');
+
+    setState(() => _isLoading = false);
   }
 
   Future<void> initializeVideoPlayer() async {
@@ -580,11 +581,32 @@ class _PrincipalPageState extends State<PrincipalPage> {
   }
 
   void _showMaterialDialogPdf() {
+    // Load from assets
+
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: Text('Material'),
+        return AlertDialog(
+          content: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width * 0.7,
+            child: Center(
+              child: _isLoading
+                  ? Center(child: CircularProgressIndicator())
+                  : PDFViewer(
+                      document: document,
+                      zoomSteps: 1,
+                      enableSwipeNavigation: true,
+                      indicatorBackground: Theme.of(context).accentColor),
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+                onPressed: () {
+                  _dismissDialog();
+                },
+                child: Text('Cerrar')),
+          ],
         );
       },
     );
@@ -634,13 +656,18 @@ class _PrincipalPageState extends State<PrincipalPage> {
     for (int i = 1; i <= count; i++) {
       print('assets/images/' + i.toString() + '.png');
       listItems.add(
-        Container(
-          padding: EdgeInsets.only(top: 15),
-          child: Center(
-            child: Image(
-              width: 250,
-              height: 400,
-              image: AssetImage('assets/images/' + i.toString() + '.png'),
+        InkWell(
+          onTap: () {
+            _showMaterialDialogPdf();
+          },
+          child: Container(
+            padding: EdgeInsets.only(top: 15),
+            child: Center(
+              child: Image(
+                width: 250,
+                height: 400,
+                image: AssetImage('assets/images/' + i.toString() + '.png'),
+              ),
             ),
           ),
         ),
