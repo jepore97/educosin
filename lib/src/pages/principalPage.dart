@@ -579,6 +579,17 @@ class _PrincipalPageState extends State<PrincipalPage> {
         });
   }
 
+  void _showMaterialDialogPdf() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(
+          child: Text('Material'),
+        );
+      },
+    );
+  }
+
   _dismissDialog() {
     Navigator.pop(context);
   }
@@ -729,23 +740,29 @@ class _PrincipalPageState extends State<PrincipalPage> {
     List<Widget> listItems = List();
     for (int i = 1; i <= _PDF.length; i++) {
       listItems.add(
-        Container(
-          padding: EdgeInsets.only(top: 15),
-          child: Center(
-            child: Column(
-              children: [
-                Image(
-                  width: 160,
-                  image: AssetImage('assets/images/pdf-2.png'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 15),
-                  child: Text(
-                    _PDF[i - 1],
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+        InkWell(
+          onTap: () {
+            _showMaterialDialogPdf();
+          },
+          child: Container(
+            padding: EdgeInsets.only(top: 15),
+            child: Center(
+              child: Column(
+                children: [
+                  Image(
+                    width: 160,
+                    image: AssetImage('assets/images/pdf-2.png'),
                   ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15),
+                    child: Text(
+                      _PDF[i - 1],
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),
