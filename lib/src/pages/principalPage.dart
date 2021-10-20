@@ -217,10 +217,33 @@ class _PrincipalPageState extends State<PrincipalPage> {
                   ),
                 ],
               ),
-              textDesc()
+              option == 'Home' ? textDesc() : minTextDesc('676')
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget minTextDesc(texto) {
+    print('entro');
+    return Container(
+      child: Row(
+        children: [
+          Column(
+            children: [
+              Text(
+                'un texto de title',
+                style: TextStyle(color: Theme.of(context).accentColor),
+              ),
+              Container(
+                child: Text(
+                    'lorem10dfhksdgfsv fsdf ksdhf ksdhf.sdhf shfhsdhf ofjfh og fo shfshf-wkf roewfo rfhofouf hdfdhfd fg'),
+              ),
+            ],
+          ),
+          homeAndBack(),
+        ],
       ),
     );
   }
@@ -231,64 +254,40 @@ class _PrincipalPageState extends State<PrincipalPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          option == 'Home'
-              ? Row(
-                  children: [
-                    Icon(
-                      Icons.help,
-                      color: Theme.of(context).highlightColor,
-                      size: 100,
-                    ),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            Text(
-                              'Nota:',
-                              style: TextStyle(
-                                  color: Theme.of(context).accentColor,
-                                  fontSize: 25),
-                            ),
-                            Text(
-                              'Recuerda que no necesitas conexión a internet para ver los OVA, OVA+ ni las',
-                              style: TextStyle(
-                                  color: Theme.of(context).highlightColor,
-                                  fontSize: 25),
-                            ),
-                          ],
-                        ),
-                        Text(
-                          'Evaluaciones, solo para la sesión de RED si se requiere Conexión a internet.',
-                          style: TextStyle(
-                              color: Theme.of(context).highlightColor,
-                              fontSize: 25),
-                        ),
-                      ],
-                    ),
-                  ],
-                )
-              : Container(),
-          Container(
-            margin: EdgeInsets.only(right: 10),
-            child: Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.all(10),
-                  child: Image(
-                    width: 50,
-                    image: AssetImage('assets/images/HOME.png'),
+          Row(
+            children: [
+              Icon(
+                Icons.help,
+                color: Theme.of(context).highlightColor,
+                size: 100,
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'Nota:',
+                        style: TextStyle(
+                            color: Theme.of(context).accentColor, fontSize: 25),
+                      ),
+                      Text(
+                        'Recuerda que no necesitas conexión a internet para ver los OVA, OVA+ ni las',
+                        style: TextStyle(
+                            color: Theme.of(context).highlightColor,
+                            fontSize: 25),
+                      ),
+                    ],
                   ),
-                ),
-                Container(
-                  margin: EdgeInsets.all(10),
-                  child: Image(
-                    width: 50,
-                    image: AssetImage('assets/images/BACK.png'),
+                  Text(
+                    'Evaluaciones, solo para la sesión de RED si se requiere Conexión a internet.',
+                    style: TextStyle(
+                        color: Theme.of(context).highlightColor, fontSize: 25),
                   ),
-                )
-              ],
-            ),
-          )
+                ],
+              ),
+            ],
+          ),
+          homeAndBack()
         ],
       ),
     );
@@ -330,6 +329,30 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 fontSize: 40,
                 color: Theme.of(context).primaryColorLight,
                 fontWeight: FontWeight.bold)),
+      ),
+    );
+  }
+
+  Widget homeAndBack() {
+    return Container(
+      margin: EdgeInsets.only(right: 10),
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Image(
+              width: 50,
+              image: AssetImage('assets/images/HOME.png'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.all(10),
+            child: Image(
+              width: 50,
+              image: AssetImage('assets/images/BACK.png'),
+            ),
+          )
+        ],
       ),
     );
   }

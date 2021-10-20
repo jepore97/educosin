@@ -13,7 +13,7 @@ class PageLoading extends StatefulWidget {
 }
 
 class _PageLoadingState extends State<PageLoading> {
-  final splashDelay = 8;
+  final splashDelay = 2;
   @override
   void initState() {
     super.initState();
