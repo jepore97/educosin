@@ -82,10 +82,13 @@ class _PrincipalPageState extends State<PrincipalPage> {
           ),
         ),
         child: Container(
+          // height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.max,
             children: [
               Row(
+                mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -134,90 +137,126 @@ class _PrincipalPageState extends State<PrincipalPage> {
                       ],
                     ),
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(top: 20),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          // mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Widgets.audioAndDate(context),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(right: 10),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          mainAxisAlignment: MainAxisAlignment.end,
+                  Container(
+                    height: option != 'Home'
+                        ? MediaQuery.of(context).size.height
+                        : double.minPositive,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
                           children: [
                             Container(
-                              padding: EdgeInsets.all(10),
-                              margin: EdgeInsets.symmetric(
-                                  vertical: 10.0, horizontal: 20),
-                              child: Column(
+                              margin: EdgeInsets.only(top: 20),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                // mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  InkWell(
-                                    onTap: () {
-                                      setState(() {
-                                        option = "Biblioteca";
-                                      });
-                                    },
-                                    child: Container(
-                                      child: Image(
-                                        width: 100,
-                                        height: 200,
-                                        image: AssetImage(
-                                            'assets/images/LIBROS.png'),
-                                      ),
+                                  Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Widgets.audioAndDate(context),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(right: 10),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    margin: EdgeInsets.symmetric(
+                                        vertical: 10.0, horizontal: 20),
+                                    child: Column(
+                                      children: [
+                                        InkWell(
+                                          onTap: () {
+                                            setState(() {
+                                              option = "Biblioteca";
+                                            });
+                                          },
+                                          child: Container(
+                                            child: Image(
+                                              width: 100,
+                                              height: 200,
+                                              image: AssetImage(
+                                                  'assets/images/LIBROS.png'),
+                                            ),
+                                          ),
+                                        ),
+                                        Text(
+                                          'BIBLIOTECA',
+                                          style: TextStyle(
+                                              color: Theme.of(context)
+                                                  .highlightColor,
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ],
                                     ),
                                   ),
-                                  Text(
-                                    'BIBLIOTECA',
-                                    style: TextStyle(
-                                        color: Theme.of(context).highlightColor,
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  )
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border(
+                                        left: BorderSide(
+                                          color:
+                                              Theme.of(context).highlightColor,
+                                          width: 1,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        selectP(),
+                                        selectP(),
+                                        selectP(),
+                                        botonAEstudiar()
+                                      ],
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
-                            Container(
-                              decoration: BoxDecoration(
-                                border: Border(
-                                  left: BorderSide(
-                                    color: Theme.of(context).highlightColor,
-                                    width: 1,
-                                  ),
-                                ),
-                              ),
-                              child: Column(
-                                children: [
-                                  selectP(),
-                                  selectP(),
-                                  selectP(),
-                                  botonAEstudiar()
-                                ],
-                              ),
-                            )
                           ],
                         ),
-                      )
-                    ],
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  option != 'Home'
+                                      ? minTextDesc('676')
+                                      : Container(),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              option == 'Home' ? textDesc() : minTextDesc('676')
+              option == 'Home'
+                  ? textDesc()
+                  : Container(
+                      color: Colors.red,
+                      child: Text('dsjdhdgjygdfjhgdhjdhjfdjgfhdhsjf'),
+                    )
             ],
           ),
         ),
@@ -226,21 +265,16 @@ class _PrincipalPageState extends State<PrincipalPage> {
   }
 
   Widget minTextDesc(texto) {
-    print('entro');
     return Container(
+      margin: EdgeInsets.only(bottom: 100),
       child: Row(
         children: [
-          Column(
-            children: [
-              Text(
-                'un texto de title',
-                style: TextStyle(color: Theme.of(context).accentColor),
-              ),
-              Container(
-                child: Text(
-                    'lorem10dfhksdgfsv fsdf ksdhf ksdhf.sdhf shfhsdhf ofjfh og fo shfshf-wkf roewfo rfhofouf hdfdhfd fg'),
-              ),
-            ],
+          Text(
+            'un texto de title',
+            style: TextStyle(color: Theme.of(context).accentColor),
+          ),
+          Container(
+            child: Text('loremf.sdhhfd fg'),
           ),
           homeAndBack(),
         ],
