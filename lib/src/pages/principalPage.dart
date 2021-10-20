@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:educosin/src/pages/questionsPage.dart';
+import 'package:educosin/src/pages/selectGrade.dart';
 import 'package:educosin/src/utils/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -373,18 +375,33 @@ class _PrincipalPageState extends State<PrincipalPage> {
       margin: EdgeInsets.only(right: 10),
       child: Column(
         children: [
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Image(
-              width: 50,
-              image: AssetImage('assets/images/HOME.png'),
+          InkWell(
+            onTap: () {
+              setState(() {
+                option = 'Home';
+              });
+            },
+            child: Container(
+              margin: EdgeInsets.all(10),
+              child: Image(
+                width: 50,
+                image: AssetImage('assets/images/HOME.png'),
+              ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: Image(
-              width: 50,
-              image: AssetImage('assets/images/BACK.png'),
+          InkWell(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => SelectGrade()));
+            },
+            child: Container(
+              margin: EdgeInsets.all(10),
+              child: Image(
+                width: 50,
+                image: AssetImage('assets/images/BACK.png'),
+              ),
             ),
           )
         ],
@@ -487,25 +504,33 @@ class _PrincipalPageState extends State<PrincipalPage> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-                width: 250,
-                padding: EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                    color: Theme.of(context).accentColor,
-                    borderRadius: BorderRadius.circular(
-                        10) // use instead of BorderRadius.all(Radius.circular(20))
-                    ),
-                child: Row(
-                  // Replace with a Row for horizontal icon + text
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text("  HACER  ",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold))
-                  ],
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (BuildContext context) => QuestionsPage()));
+                },
+                child: Container(
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                  width: 250,
+                  padding: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).accentColor,
+                      borderRadius: BorderRadius.circular(
+                          10) // use instead of BorderRadius.all(Radius.circular(20))
+                      ),
+                  child: Row(
+                    // Replace with a Row for horizontal icon + text
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text("  HACER  ",
+                          style: TextStyle(
+                              color: Theme.of(context).primaryColor,
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold))
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -589,6 +614,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
         return biblioteca(_buildItemsOva(3));
         break;
       case "PDF":
+        return biblioteca(_buildItemsPDF());
+        break;
+      case "OFFICE":
         return biblioteca(_buildItemsPDF());
         break;
       default:
@@ -677,7 +705,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
     return Container(
       color: Theme.of(context).highlightColor,
       padding: EdgeInsets.all(10),
-      height: 600,
+      height: MediaQuery.of(context).size.height,
       width: 700,
       child: GridView.custom(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
