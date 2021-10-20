@@ -21,7 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter_spinkit: ^5.1.0
+  flutter_spinkit:
+  advance_pdf_viewer:
   video_player: 
   chewie: 
   flutter:
@@ -67,6 +68,7 @@ flutter:
     - assets/images/5.png
     - assets/images/6.png
     - assets/images/pdf-2.png
+    - assets/images/Secundaria Activa Matemáticas 9°.pdf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
