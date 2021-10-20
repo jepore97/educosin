@@ -242,7 +242,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   option != 'Home'
-                                      ? minTextDesc('676')
+                                      ? minTextDesc()
                                       : Container(),
                                 ],
                               ),
@@ -254,12 +254,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                   ),
                 ],
               ),
-              option == 'Home'
-                  ? textDesc()
-                  : Container(
-                      color: Colors.red,
-                      child: Text('dsjdhdgjygdfjhgdhjdhjfdjgfhdhsjf'),
-                    )
+              option == 'Home' ? textDesc() : Container()
             ],
           ),
         ),
@@ -267,19 +262,57 @@ class _PrincipalPageState extends State<PrincipalPage> {
     );
   }
 
-  Widget minTextDesc(texto) {
+  Widget minTextDesc() {
+    var text = '';
+    setState(() {
+      text = option;
+      switch (text) {
+        case "Home":
+          return '';
+          break;
+        case "Biblioteca":
+          return biblioteca(_buildItems(6));
+          break;
+        case "OVA+":
+          return text =
+              'Cada OVA+ es una videoclase de duracion extendid, en la cual podras conocer a mayor profundidad las diferentes enseñanzas que imparte el docente de la materia';
+          break;
+        case "PDF":
+          return text =
+              'Aqui encontraras las actividades o Recursos que ha dejado el docente para el grado, periodo y materia.debes desarrollarlo ayudandote de los OVA';
+          break;
+      }
+    });
     return Container(
       margin: EdgeInsets.only(bottom: 100),
       child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'un texto de title',
-            style: TextStyle(color: Theme.of(context).accentColor),
+          Column(
+            children: [
+              Text(
+                'Guía del Entorno',
+                style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30),
+              ),
+              Container(
+                padding: EdgeInsets.only(bottom: 20),
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: Text(
+                  text,
+                  style: TextStyle(
+                      color: Theme.of(context).highlightColor, fontSize: 20),
+                ),
+              ),
+            ],
           ),
           Container(
-            child: Text('loremf.sdhhfd fg'),
+            margin: EdgeInsets.only(left: 20),
+            child: homeAndBack(),
           ),
-          homeAndBack(),
         ],
       ),
     );
