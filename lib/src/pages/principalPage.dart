@@ -269,15 +269,19 @@ class _PrincipalPageState extends State<PrincipalPage> {
           return '';
           break;
         case "Biblioteca":
-          return biblioteca(_buildItems(6));
+          return '';
           break;
         case "OVA+":
           return text =
               'Cada OVA+ es una videoclase de duracion extendid, en la cual podras conocer a mayor profundidad las diferentes enseñanzas que imparte el docente de la materia';
           break;
-        case "PDF":
+        case "OFFICE":
           return text =
               'Aqui encontraras las actividades o Recursos que ha dejado el docente para el grado, periodo y materia.debes desarrollarlo ayudandote de los OVA';
+          break;
+        case "OFFICE":
+          return text =
+              'Aqui encontraras material o recursos variados de diferentes autores o docentes que te serviran para el aprendizaje y desarrollo intelectual de la materia ';
           break;
       }
     });
