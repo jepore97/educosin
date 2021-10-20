@@ -12,7 +12,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   final versionName = "Versión 1.0.0  |  Todos los derechos reservados 2022 Ⓡ";
-  final splashDelay = 5;
+  final splashDelay = 8;
 
   @override
   void initState() {

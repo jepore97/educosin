@@ -531,7 +531,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
         return biblioteca(_buildItemsOva(3));
         break;
       case "PDF":
-        return pdf();
+        return biblioteca(_buildItemsPDF());
         break;
       default:
         return CircularProgressIndicator();
