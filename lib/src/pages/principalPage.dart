@@ -804,80 +804,85 @@ class _PrincipalPageState extends State<PrincipalPage> {
     for (int i = 1; i <= count; i++) {
       print('assets/images/' + i.toString() + '.png');
       listItems.add(
-        Container(
-          // Con esta propiedad agregamos margen a nuestro Card
-          // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
-          margin: EdgeInsets.all(15),
+        InkWell(
+          onTap: () {
+            _showMaterialDialog();
+          },
+          child: Container(
+            // Con esta propiedad agregamos margen a nuestro Card
+            // El margen es la separación entre widgets o entre los bordes del widget padre e hijo
+            margin: EdgeInsets.all(15),
 
-          child: Column(
-            children: [
-              Container(
-                width: 200,
-                height: 200,
-                color:
-                    Colors.primaries[Random().nextInt(Colors.primaries.length)],
-                child: Center(
+            child: Column(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors
+                      .primaries[Random().nextInt(Colors.primaries.length)],
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Matematicas',
+                          style: TextStyle(
+                              color: Theme.of(context).highlightColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          'Matematicas',
+                          style: TextStyle(
+                              color: Theme.of(context).highlightColor,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          '1p1',
+                          style: TextStyle(
+                              color: Theme.of(context).highlightColor,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(20),
+                  color: Colors.white,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Matematicas',
-                        style: TextStyle(
-                            color: Theme.of(context).highlightColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                        'Agilmate 1p1: ',
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        'Matematicas',
-                        style: TextStyle(
-                            color: Theme.of(context).highlightColor,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
+                      Row(
+                        children: [
+                          Text(
+                            'Profesor: ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text('Lic.Freddy')
+                        ],
                       ),
-                      Text(
-                        '1p1',
-                        style: TextStyle(
-                            color: Theme.of(context).highlightColor,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold),
-                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Duracion: ',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          Text('30 Minutos')
+                        ],
+                      )
                     ],
                   ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(20),
-                color: Colors.white,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Agilmate 1p1: ',
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Profesor: ',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text('Lic.Freddy')
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Duracion: ',
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        Text('30 Minutos')
-                      ],
-                    )
-                  ],
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       );
