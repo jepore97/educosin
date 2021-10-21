@@ -134,7 +134,9 @@ class _SelectGradeState extends State<SelectGrade> {
                         value: value,
                       ))
                   .toList(),
-              onChanged: (String value) {},
+              onChanged: (String value) {
+                value = value;
+              },
               isExpanded: false,
               value: _dropdownValues.first,
             ),

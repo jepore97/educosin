@@ -46,7 +46,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   loadDocument() async {
     document = await PDFDocument.fromAsset(
-        'assets/images/Secundaria Activa Matemáticas 9°.pdf');
+        'assets/images/Secundaria Activa Matemáticas 9°1.pdf');
 
     setState(() => _isLoading = false);
   }
@@ -281,7 +281,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
           return text =
               'Aqui encontraras las actividades o Recursos que ha dejado el docente para el grado, periodo y materia.debes desarrollarlo ayudandote de los OVA';
           break;
-        case "OFFICE":
+        case "PDF":
           return text =
               'Aqui encontraras material o recursos variados de diferentes autores o docentes que te serviran para el aprendizaje y desarrollo intelectual de la materia ';
           break;
@@ -477,7 +477,12 @@ class _PrincipalPageState extends State<PrincipalPage> {
                             value: value,
                           ))
                       .toList(),
-                  onChanged: (String value) {},
+                  onChanged: (String value) {
+                    print(value);
+                    setState(() {
+                      value = value;
+                    });
+                  },
                   isExpanded: false,
                   value: _dropdownValuesPeriodo.first,
                 ),
@@ -504,7 +509,9 @@ class _PrincipalPageState extends State<PrincipalPage> {
                             value: value,
                           ))
                       .toList(),
-                  onChanged: (String value) {},
+                  onChanged: (String value) {
+                    value = value;
+                  },
                   isExpanded: false,
                   value: _dropdownValuesPeriodo.first,
                 ),
@@ -645,6 +652,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
         return selects();
         break;
       case "Biblioteca":
+        print('biblioteca');
         return biblioteca(_buildItems(6));
         break;
       case "OVA+":
