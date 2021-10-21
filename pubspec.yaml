@@ -69,6 +69,8 @@ flutter:
     - assets/images/6.png
     - assets/images/pdf-2.png
     - assets/images/Secundaria Activa Matemáticas 9°.pdf
+    - assets/images/X.png
+    - assets/images/BIEN.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

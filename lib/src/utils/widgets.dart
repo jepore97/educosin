@@ -143,4 +143,21 @@ class Widgets {
       ),
     );
   }
+
+  static showLoaderDialog(BuildContext context, bool estado) {
+    showDialog(
+      barrierDismissible: false,
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          width: 100,
+          height: 200,
+          child: Image(
+            image: AssetImage(
+                'assets/images/' + ((estado) ? 'BIEN.png' : 'X.png')),
+          ),
+        );
+      },
+    );
+  }
 }
