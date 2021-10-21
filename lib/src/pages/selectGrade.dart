@@ -47,7 +47,7 @@ class _SelectGradeState extends State<SelectGrade> {
       bottomSheet: Widgets.bottomshet(context),
       body: Container(
           padding: EdgeInsets.all(20),
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - 95,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -73,7 +73,7 @@ class _SelectGradeState extends State<SelectGrade> {
 
   Widget subtitle() {
     return Container(
-        margin: EdgeInsets.only(top: 60),
+        margin: EdgeInsets.only(top: 40),
         child: Column(
           children: [
             Row(
@@ -83,14 +83,14 @@ class _SelectGradeState extends State<SelectGrade> {
                   'Selecciona el ',
                   style: TextStyle(
                       color: Theme.of(context).highlightColor,
-                      fontSize: 50,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
                   'GRADO, Periodo y Materia ',
                   style: TextStyle(
                       color: Theme.of(context).accentColor,
-                      fontSize: 50,
+                      fontSize: 30,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -99,7 +99,7 @@ class _SelectGradeState extends State<SelectGrade> {
               'que desea estudiar',
               style: TextStyle(
                   color: Theme.of(context).highlightColor,
-                  fontSize: 50,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold),
             )
           ],
@@ -108,12 +108,12 @@ class _SelectGradeState extends State<SelectGrade> {
 
   Widget selects() {
     return Container(
-      margin: EdgeInsets.only(top: 60),
+      margin: EdgeInsets.only(top: 40),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             margin: EdgeInsets.symmetric(horizontal: 20.0),
             decoration: BoxDecoration(
               color: Theme.of(context).highlightColor,
@@ -125,7 +125,7 @@ class _SelectGradeState extends State<SelectGrade> {
             ),
             child: DropdownButton(
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold),
               items: _dropdownValues
@@ -142,7 +142,7 @@ class _SelectGradeState extends State<SelectGrade> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             margin: EdgeInsets.symmetric(horizontal: 20.0),
             decoration: BoxDecoration(
               color: Theme.of(context).highlightColor,
@@ -154,7 +154,7 @@ class _SelectGradeState extends State<SelectGrade> {
             ),
             child: DropdownButton(
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold),
               items: _dropdownValuesPeriodo
@@ -169,7 +169,7 @@ class _SelectGradeState extends State<SelectGrade> {
             ),
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             margin: EdgeInsets.symmetric(horizontal: 20.0),
             decoration: BoxDecoration(
               color: Theme.of(context).highlightColor,
@@ -181,7 +181,7 @@ class _SelectGradeState extends State<SelectGrade> {
             ),
             child: DropdownButton(
               style: TextStyle(
-                  fontSize: 40,
+                  fontSize: 30,
                   color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.bold),
               items: _dropdownValuesMateria
@@ -209,7 +209,7 @@ class _SelectGradeState extends State<SelectGrade> {
                 builder: (BuildContext context) => PageLoading()));
       },
       child: Container(
-        margin: EdgeInsets.only(top: 60),
+        margin: EdgeInsets.only(top: 40),
         decoration: BoxDecoration(
             color: Theme.of(context).accentColor,
             borderRadius: BorderRadius.circular(
@@ -219,7 +219,7 @@ class _SelectGradeState extends State<SelectGrade> {
         child: Text(
           '¡A ESTUDIAR!',
           style: TextStyle(
-              fontSize: 30,
+              fontSize: 25,
               color: Theme.of(context).primaryColor,
               fontWeight: FontWeight.bold),
         ),

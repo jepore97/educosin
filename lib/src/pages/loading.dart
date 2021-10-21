@@ -25,7 +25,7 @@ class _PageLoadingState extends State<PageLoading> {
     return Scaffold(
         bottomSheet: Widgets.bottomshet(context),
         body: Container(
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - 95,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -39,6 +39,7 @@ class _PageLoadingState extends State<PageLoading> {
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text('Estamos preparando tu entorno educativo',
                   style: TextStyle(
@@ -48,7 +49,7 @@ class _PageLoadingState extends State<PageLoading> {
                   )),
               SpinKitCubeGrid(
                 color: Colors.white,
-                size: 200.0,
+                size: 180,
               ),
             ],
           ),

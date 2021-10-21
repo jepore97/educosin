@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 class Widgets {
   static bottomshet(context) {
     return Container(
-      height: 100,
+      height: 95,
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Image(
-            width: 300,
+            width: 280,
             height: 100,
             image: AssetImage('assets/images/logocompletoazul.png'),
           ),
           Image(
-            width: 300,
+            width: 280,
             image: AssetImage('assets/images/colciencias.png'),
           ),
           Image(
-            width: 300,
+            width: 280,
             image: AssetImage('assets/images/mineducacion.png'),
           ),
         ],
@@ -99,7 +99,7 @@ class Widgets {
 
   static singIn(context) {
     return Container(
-      margin: EdgeInsets.only(top: 60),
+      margin: EdgeInsets.only(top: 40),
       child: Column(
         children: [
           Row(

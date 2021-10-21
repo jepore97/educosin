@@ -19,16 +19,16 @@ class _QuestionsPageState extends State<QuestionsPage> {
       bottomSheet: Widgets.bottomshet(context),
       body: Container(
           padding: EdgeInsets.all(20),
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - 95,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
               Widgets.audioAndDate(context),
               Container(
                 margin: EdgeInsets.only(
-                  top: 90,
-                  right: 80,
-                  left: 80,
+                  top: 50,
+                  right: 60,
+                  left: 60,
                 ),
                 child: Column(children: [
                   Container(
@@ -48,8 +48,6 @@ class _QuestionsPageState extends State<QuestionsPage> {
                                         PrincipalPage()));
                           },
                           child: Container(
-                            margin: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 20),
                             width: 130,
                             padding: EdgeInsets.all(10.0),
                             decoration: BoxDecoration(
@@ -60,7 +58,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                             child: Center(
                               child: Text(
                                 'SALIR',
-                                style: TextStyle(fontSize: 35),
+                                style: TextStyle(fontSize: 25),
                               ),
                             ),
                           ),
@@ -97,12 +95,12 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 'Determina cuáles de los siguientes enunciados son proposiciones:',
                 style: TextStyle(
                   color: Theme.of(context).primaryColorLight,
-                  fontSize: 30,
+                  fontSize: 25,
                 )),
           ],
         ),
         Container(
-          margin: EdgeInsets.only(top: 50),
+          margin: EdgeInsets.only(top: 20),
           child: Row(
             children: [
               Padding(
@@ -114,50 +112,50 @@ class _QuestionsPageState extends State<QuestionsPage> {
                       children: [
                         Text('1 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        Text('¿Dónde estoy?', style: TextStyle(fontSize: 30))
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text('¿Dónde estoy?', style: TextStyle(fontSize: 25))
                       ],
                     ),
                     Row(
                       children: [
                         Text('2 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
+                                fontSize: 25, fontWeight: FontWeight.bold)),
                         Text('Todas las aves vuelan',
-                            style: TextStyle(fontSize: 30))
+                            style: TextStyle(fontSize: 25))
                       ],
                     ),
                     Row(
                       children: [
                         Text('3 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        Text('¡Viva la vida!', style: TextStyle(fontSize: 30))
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text('¡Viva la vida!', style: TextStyle(fontSize: 25))
                       ],
                     ),
                     Row(
                       children: [
                         Text('4 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
+                                fontSize: 25, fontWeight: FontWeight.bold)),
                         Text('Todos amamos las matemáticas',
-                            style: TextStyle(fontSize: 30))
+                            style: TextStyle(fontSize: 25))
                       ],
                     ),
                     Row(
                       children: [
                         Text('5 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        Text('Mi mamá me ama', style: TextStyle(fontSize: 30))
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text('Mi mamá me ama', style: TextStyle(fontSize: 25))
                       ],
                     ),
                     Row(
                       children: [
                         Text('6 - ',
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        Text('4 + 5 = 15', style: TextStyle(fontSize: 30))
+                                fontSize: 25, fontWeight: FontWeight.bold)),
+                        Text('4 + 5 = 15', style: TextStyle(fontSize: 25))
                       ],
                     )
                   ],
@@ -185,12 +183,12 @@ class _QuestionsPageState extends State<QuestionsPage> {
             Text('El número que satisface a la ecuación',
                 style: TextStyle(
                   color: Theme.of(context).primaryColorLight,
-                  fontSize: 30,
+                  fontSize: 25,
                 )),
           ],
         ),
         Container(
-          margin: EdgeInsets.only(top: 50),
+          margin: EdgeInsets.only(top: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -230,10 +228,10 @@ class _QuestionsPageState extends State<QuestionsPage> {
                     builder: (BuildContext context) => PrincipalPage()));
         },
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-          width: 60,
-          height: 60,
-          padding: EdgeInsets.all(10.0),
+          margin: EdgeInsets.symmetric(vertical: 5, horizontal: 18),
+          width: 50,
+          height: 50,
+          padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: Theme.of(context).accentColor,
               borderRadius: BorderRadius.circular(
@@ -243,7 +241,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
             child: Text(
               option,
               style: TextStyle(
-                fontSize: 30,
+                fontSize: 23,
                 color: Theme.of(context).primaryColorLight,
                 fontWeight: FontWeight.bold,
               ),
@@ -254,7 +252,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
       Text(
         text,
         style: TextStyle(
-            fontSize: 30,
+            fontSize: 25,
             color: Theme.of(context).primaryColorLight,
             fontWeight: FontWeight.bold),
       )

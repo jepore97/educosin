@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
       bottomSheet: Widgets.bottomshet(context),
       body: Container(
           padding: EdgeInsets.all(20),
-          height: MediaQuery.of(context).size.height,
+          height: MediaQuery.of(context).size.height - 95,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
         Icon(
           Icons.info,
           color: Theme.of(context).highlightColor,
-          size: 50,
+          size: 40,
         )
       ],
     );
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget content() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 100),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       child: Column(
         children: [
           subtitle(),
@@ -70,12 +70,12 @@ class _HomePageState extends State<HomePage> {
 
   Widget subtitle() {
     return Container(
-        margin: EdgeInsets.only(top: 60),
+        margin: EdgeInsets.only(top: 10),
         child: Text(
           '¿Cómo deseas estudiar hoy?',
           style: TextStyle(
             color: Theme.of(context).highlightColor,
-            fontSize: 50,
+            fontSize: 35,
             fontWeight: FontWeight.bold,
           ),
         ));
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget buttons() {
     return Container(
-      margin: EdgeInsets.only(top: 60),
+      margin: EdgeInsets.only(top: 40),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -98,15 +98,15 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(
-                      50) // use instead of BorderRadius.all(Radius.circular(20))
+                      40) // use instead of BorderRadius.all(Radius.circular(20))
                   ),
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(25),
               child: Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Image(
-                      height: 120,
+                      height: 90,
                       image: AssetImage('assets/images/GRADUANDO.png'),
                     ),
                   ),
@@ -115,14 +115,14 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'ESTUDIO',
                         style: TextStyle(
-                            fontSize: 50,
+                            fontSize: 40,
                             color: Theme.of(context).primaryColorLight,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'PERSONALIZADO',
                         style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 20,
                             color: Theme.of(context).primaryColorLight,
                             fontWeight: FontWeight.bold),
                       ),
@@ -143,15 +143,15 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(
-                      50) // use instead of BorderRadius.all(Radius.circular(20))
+                      40) // use instead of BorderRadius.all(Radius.circular(20))
                   ),
-              padding: EdgeInsets.symmetric(vertical: 30, horizontal: 40),
+              padding: EdgeInsets.symmetric(vertical: 25, horizontal: 40),
               child: Row(
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Image(
-                      height: 120,
+                      height: 90,
                       image: AssetImage('assets/images/TORRE.png'),
                     ),
                   ),
@@ -160,14 +160,14 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         'JUEGO',
                         style: TextStyle(
-                            fontSize: 50,
+                            fontSize: 40,
                             color: Theme.of(context).primaryColorLight,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         'AGILMATE',
                         style: TextStyle(
-                            fontSize: 45,
+                            fontSize: 35,
                             color: Theme.of(context).primaryColorLight,
                             fontWeight: FontWeight.bold),
                       ),

@@ -72,7 +72,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
       drawer: Widgets.drawer(),
       body: Container(
         // padding: EdgeInsets.all(10),
-        height: MediaQuery.of(context).size.height,
+        height: MediaQuery.of(context).size.height - 95,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -99,8 +99,8 @@ class _PrincipalPageState extends State<PrincipalPage> {
                     child: Column(
                       children: [
                         Container(
-                          margin: EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 10),
+                          margin:
+                              EdgeInsets.symmetric(vertical: 5, horizontal: 5),
                           decoration: BoxDecoration(
                             color: (option != "Home" && option != "RED")
                                 ? Theme.of(context).highlightColor
@@ -120,7 +120,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                   IconButton(
                                       icon: Icon(
                                         Icons.menu,
-                                        size: 60,
+                                        size: 50,
                                         color: (option != "Home" &&
                                                 option != "RED")
                                             ? Theme.of(context)
@@ -169,7 +169,6 @@ class _PrincipalPageState extends State<PrincipalPage> {
                               ),
                             ),
                             Container(
-                              margin: EdgeInsets.only(right: 10),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -189,8 +188,8 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                           },
                                           child: Container(
                                             child: Image(
-                                              width: 100,
-                                              height: 200,
+                                              width: 90,
+                                              height: 190,
                                               image: AssetImage(
                                                   'assets/images/LIBROS.png'),
                                             ),
@@ -201,7 +200,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                                           style: TextStyle(
                                               color: Theme.of(context)
                                                   .highlightColor,
-                                              fontSize: 30,
+                                              fontSize: 20,
                                               fontWeight: FontWeight.bold),
                                         )
                                       ],
@@ -300,7 +299,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 style: TextStyle(
                     color: Theme.of(context).accentColor,
                     fontWeight: FontWeight.bold,
-                    fontSize: 30),
+                    fontSize: 20),
               ),
               Container(
                 padding: EdgeInsets.only(bottom: 20),
@@ -308,7 +307,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 child: Text(
                   text,
                   style: TextStyle(
-                      color: Theme.of(context).highlightColor, fontSize: 20),
+                      color: Theme.of(context).highlightColor, fontSize: 16),
                 ),
               ),
             ],
@@ -324,7 +323,6 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   Widget textDesc() {
     return Container(
-      margin: EdgeInsets.only(bottom: 100),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -333,7 +331,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
               Icon(
                 Icons.help,
                 color: Theme.of(context).highlightColor,
-                size: 100,
+                size: 70,
               ),
               Column(
                 children: [
@@ -342,20 +340,20 @@ class _PrincipalPageState extends State<PrincipalPage> {
                       Text(
                         'Nota:',
                         style: TextStyle(
-                            color: Theme.of(context).accentColor, fontSize: 25),
+                            color: Theme.of(context).accentColor, fontSize: 20),
                       ),
                       Text(
                         'Recuerda que no necesitas conexión a internet para ver los OVA, OVA+ ni las',
                         style: TextStyle(
                             color: Theme.of(context).highlightColor,
-                            fontSize: 25),
+                            fontSize: 20),
                       ),
                     ],
                   ),
                   Text(
                     'Evaluaciones, solo para la sesión de RED si se requiere Conexión a internet.',
                     style: TextStyle(
-                        color: Theme.of(context).highlightColor, fontSize: 25),
+                        color: Theme.of(context).highlightColor, fontSize: 20),
                   ),
                 ],
               ),
@@ -369,7 +367,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
 
   Widget buttonsFile() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 60),
+      margin: EdgeInsets.symmetric(horizontal: 40),
       child: Row(
         children: [
           buttonFile('OVA+'),
@@ -389,8 +387,8 @@ class _PrincipalPageState extends State<PrincipalPage> {
         });
       },
       child: Container(
-        margin: EdgeInsets.only(top: 20),
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        margin: EdgeInsets.only(top: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
         decoration: BoxDecoration(
             color: (option != "Home" && option != "RED")
                 ? Colors.white
@@ -400,7 +398,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
             ),
         child: Text(text,
             style: TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 color: Theme.of(context).primaryColorLight,
                 fontWeight: FontWeight.bold)),
       ),
@@ -421,7 +419,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
             child: Container(
               margin: EdgeInsets.all(10),
               child: Image(
-                width: 50,
+                width: 40,
                 image: AssetImage('assets/images/HOME.png'),
               ),
             ),
@@ -436,7 +434,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
             child: Container(
               margin: EdgeInsets.all(10),
               child: Image(
-                width: 50,
+                width: 40,
                 image: AssetImage('assets/images/BACK.png'),
               ),
             ),
@@ -449,14 +447,14 @@ class _PrincipalPageState extends State<PrincipalPage> {
   Widget selects() {
     return Container(
       // padding: EdgeInsets.symmetric(horizontal: 60),
-      margin: EdgeInsets.symmetric(vertical: 60.0, horizontal: 80),
+      margin: EdgeInsets.symmetric(vertical: 50, horizontal: 60),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Column(
             children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 margin: EdgeInsets.symmetric(vertical: 10.0),
                 decoration: BoxDecoration(
                   color: Theme.of(context).highlightColor,
@@ -468,7 +466,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 ),
                 child: DropdownButton(
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30,
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.bold),
                   items: _dropdownValuesPeriodo
@@ -488,7 +486,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
                 margin: EdgeInsets.symmetric(vertical: 10.0),
                 decoration: BoxDecoration(
                   color: Theme.of(context).highlightColor,
@@ -500,7 +498,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 ),
                 child: DropdownButton(
                   style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30,
                       color: Theme.of(context).primaryColor,
                       fontWeight: FontWeight.bold),
                   items: _dropdownValuesPeriodo
@@ -522,7 +520,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
             children: [
               Container(
                 margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-                width: 250,
+                width: 200,
                 padding: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                     color: Theme.of(context).accentColor,
@@ -538,11 +536,11 @@ class _PrincipalPageState extends State<PrincipalPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Icon(Icons.play_arrow,
-                          color: Theme.of(context).primaryColor, size: 45),
+                          color: Theme.of(context).primaryColor, size: 35),
                       Text(" Ver  ",
                           style: TextStyle(
                               color: Theme.of(context).primaryColor,
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold))
                     ],
                   ),
@@ -557,7 +555,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 },
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
-                  width: 250,
+                  width: 200,
                   padding: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                       color: Theme.of(context).accentColor,
@@ -571,7 +569,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                       Text("  HACER  ",
                           style: TextStyle(
                               color: Theme.of(context).primaryColor,
-                              fontSize: 40,
+                              fontSize: 30,
                               fontWeight: FontWeight.bold))
                     ],
                   ),
@@ -588,7 +586,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10.0),
       padding: EdgeInsets.symmetric(vertical: 5.0),
-      width: 250,
+      width: 220,
       decoration: BoxDecoration(
         color: Theme.of(context).highlightColor,
         borderRadius: BorderRadius.circular(15.0),
@@ -626,7 +624,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                 builder: (BuildContext context) => PrincipalPage()));
       },
       child: Container(
-        width: 250,
+        width: 220,
         decoration: BoxDecoration(
             color: Theme.of(context).accentColor,
             borderRadius: BorderRadius.circular(
@@ -652,7 +650,6 @@ class _PrincipalPageState extends State<PrincipalPage> {
         return selects();
         break;
       case "Biblioteca":
-        print('biblioteca');
         return biblioteca(_buildItems(6));
         break;
       case "OVA+":
@@ -750,8 +747,8 @@ class _PrincipalPageState extends State<PrincipalPage> {
     return Container(
       color: Theme.of(context).highlightColor,
       padding: EdgeInsets.all(10),
-      height: MediaQuery.of(context).size.height,
-      width: 700,
+      height: MediaQuery.of(context).size.height - 110,
+      width: 580,
       child: GridView.custom(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
@@ -912,7 +909,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
               child: Column(
                 children: [
                   Image(
-                    width: 160,
+                    width: 130,
                     image: AssetImage('assets/images/pdf-2.png'),
                   ),
                   Padding(
@@ -920,7 +917,7 @@ class _PrincipalPageState extends State<PrincipalPage> {
                     child: Text(
                       _PDF[i - 1],
                       style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   )
                 ],
